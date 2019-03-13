@@ -1,7 +1,7 @@
 FROM python:3.7-alpine
 RUN mkdir /buildbot && \
       addgroup -S buildbot && adduser -S buildbot -G buildbot && \
-      apk add dumb-init gcc musl-dev && \
+      apk add dumb-init gcc musl-dev git && \
       pip install Twisted==18.9.0 && \
       pip install buildbot-worker==2.1.0 
 COPY buildbot.tac /buildbot
